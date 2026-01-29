@@ -1,6 +1,7 @@
 # Llama.cpp-Settings-Testing
 A python script to test which settings are ideal for you GPU
 This script benchmarks several options
+
 -c Context window
 
 -ngl The number of layers loaded into GPU VRAM
