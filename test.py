@@ -7,7 +7,7 @@ from datetime import datetime
 # --- CONFIGURATION ---
 MODEL_PATH = "./models/deepseek-r1-14b.gguf"
 LLAMA_BENCH_PATH = "./llama-bench"
-OUTPUT_FILE = "universal_model_benchmarks.md"
+OUTPUT_FILE = "gpu_model_benchmarks.md"
 
 # 1. EXTENDED ARCHITECTURAL REGISTRY (Updated for 2026)
 # Maps filename snippets to (Typical Layers, Benchmark NGL Range)
@@ -47,7 +47,7 @@ gpu_vram = get_gpu_vram()
 NGL_TESTS = get_ngl_range(MODEL_PATH)
 
 # Context Scaling based on 2026 VRAM standards
-CONTEXT_VALS = [2048, 8192]
+CONTEXT_VALS = [512, 1024, 2048, 4096, 8192]
 if gpu_vram >= 24000: CONTEXT_VALS.extend([32768, 65536])
 if gpu_vram >= 48000: CONTEXT_VALS.append(128000)
 
